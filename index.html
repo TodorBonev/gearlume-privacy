@@ -116,6 +116,7 @@
   <li><strong>Rewarded ads</strong> are optional: you choose to watch one to get a hint or to see a solution.</li>
   <li><strong>Interstitial ads</strong> may appear between levels.</li>
 </ul>
+<p>Ads are limited to content rated up to <strong>T (teen)</strong> in AdMob.</p>
 <p>When an ad is requested or shown, <strong>Google</strong> may collect and use information such as your Android advertising ID, IP address (and the approximate location that can be derived from it), device and operating-system details, the app’s name and version, and how you interact with ads and whether they load. Google uses this to choose and show ads, measure them, prevent fraud and abuse, and — depending on your consent and the rules where you live — to personalise ads. Google is responsible for this data. I have no access to it; from AdMob I receive only totals such as the number of ads shown and the revenue.</p>
 <h3>Your consent and your choices</h3>
 <ul>
@@ -135,7 +136,16 @@
   <li>It does not use your location, contacts, camera, microphone, photos or files.</li>
   <li>It has no chat or social features and does not show other players’ data.</li>
 </ul>
-<p>The game asks Android for these permissions: <em>internet</em> and <em>network state</em> (to load ads and store prices), <em>Google Play billing</em> (purchases), <em>vibration</em> (used only for haptic feedback), and the <em>advertising ID</em> and Android’s ad-services permissions (declared by Google’s ads SDK, used only for the ads described above). A few technical permissions, such as keeping the device awake briefly, are declared by the libraries the game uses and are not used to collect data.</p>
+<p>The game asks Android for these permissions:</p>
+<ul>
+  <li><strong>Internet and network state</strong> (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>): to load ads and to check the connection. Used by Google’s Mobile Ads SDK.</li>
+  <li><strong>Advertising ID</strong> (<code>com.google.android.gms.permission.AD_ID</code>): the advertising ID, used for ads as described in section 3.</li>
+  <li><strong>Android’s ad services</strong> (<code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code>): Android’s Privacy Sandbox ad services, used by Google’s Mobile Ads SDK where your device supports them.</li>
+  <li><strong>Google Play billing</strong> (<code>com.android.vending.BILLING</code>): the optional <em>Remove ads</em> purchase through Google Play.</li>
+  <li><strong>Keeping the device awake and running a short task</strong> (<code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code>): added by the background-task library (WorkManager) of Google’s Mobile Ads SDK, to finish short background tasks. The game itself does not run in the background.</li>
+  <li><strong>Vibration</strong> (<code>VIBRATE</code>): haptic feedback only.</li>
+</ul>
+<p>The game does not ask for any other permission, such as location, contacts, camera, microphone, photos or files.</p>
 <p>If a future version adds anything that changes this — for example analytics — I will update this policy before that version is released.</p>
 
 <h2>6. Sharing</h2>
@@ -202,6 +212,7 @@
   <li><strong>Наградните реклами</strong> са по избор: ти решаваш да гледаш една, за да получиш подсказка или да видиш решение.</li>
   <li><strong>Междинни реклами</strong> може да се появят между нивата.</li>
 </ul>
+<p>Рекламите са ограничени до съдържание с рейтинг до <strong>T (teen, тийнейджъри)</strong> в AdMob.</p>
 <p>Когато се заявява или показва реклама, <strong>Google</strong> може да събира и използва информация като рекламния идентификатор на Android, IP адрес (и приблизителното местоположение, което може да се определи от него), данни за устройството и операционната система, името и версията на приложението и как взаимодействаш с рекламите и дали се зареждат. Google я използва, за да избира и показва реклами, да ги измерва, да предотвратява измами и злоупотреби и — според съгласието ти и правилата там, където живееш — за персонализиране на рекламите. За тези данни отговаря Google. Аз нямам достъп до тях; от AdMob получавам само общи суми, като брой показани реклами и приходи.</p>
 <h3>Твоето съгласие и избор</h3>
 <ul>
@@ -221,7 +232,16 @@
   <li>Не ползва местоположението, контактите, камерата, микрофона, снимките или файловете ти.</li>
   <li>Няма чат или социални функции и не показва данни на други играчи.</li>
 </ul>
-<p>Играта иска от Android тези разрешения: <em>интернет</em> и <em>състояние на мрежата</em> (за зареждане на реклами и цени), <em>плащане през Google Play</em> (покупки), <em>вибрация</em> (използва се само за тактилна обратна връзка), както и <em>рекламния идентификатор</em> и разрешенията на Android за рекламни услуги (декларирани от рекламния SDK на Google и използвани само за описаните реклами). Няколко технически разрешения, като кратко задържане на устройството будно, са декларирани от библиотеките, които играта ползва, и не служат за събиране на данни.</p>
+<p>Играта иска от Android тези разрешения:</p>
+<ul>
+  <li><strong>Интернет и състояние на мрежата</strong> (<code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code>): за зареждане на реклами и за проверка на връзката. Ползват се от Mobile Ads SDK на Google.</li>
+  <li><strong>Рекламен идентификатор</strong> (<code>com.google.android.gms.permission.AD_ID</code>): рекламният идентификатор, ползван за реклами, както е описано в раздел 3.</li>
+  <li><strong>Рекламни услуги на Android</strong> (<code>ACCESS_ADSERVICES_AD_ID</code>, <code>ACCESS_ADSERVICES_ATTRIBUTION</code>, <code>ACCESS_ADSERVICES_TOPICS</code>): рекламните услуги на Privacy Sandbox на Android, които Mobile Ads SDK на Google ползва там, където устройството ти ги поддържа.</li>
+  <li><strong>Плащане през Google Play</strong> (<code>com.android.vending.BILLING</code>): незадължителната покупка <em>Без реклами</em> през Google Play.</li>
+  <li><strong>Задържане на устройството будно и кратка задача</strong> (<code>WAKE_LOCK</code>, <code>FOREGROUND_SERVICE</code>): добавени от библиотеката за фонови задачи (WorkManager) на Mobile Ads SDK на Google, за да завършва кратки фонови задачи. Самата игра не работи във фонов режим.</li>
+  <li><strong>Вибрация</strong> (<code>VIBRATE</code>): само за тактилна обратна връзка.</li>
+</ul>
+<p>Играта не иска други разрешения, например за местоположение, контакти, камера, микрофон, снимки или файлове.</p>
 <p>Ако бъдеща версия добави нещо, което променя това — например аналитика — ще обновя тази политика, преди тази версия да бъде пусната.</p>
 
 <h2>6. Споделяне</h2>
@@ -231,7 +251,7 @@
 <p>Gearlume е логическа игра за широка публика и <strong>не е насочена към деца под 13 години</strong> (или под минималната възраст по закона там, където живееш — например 16 години в някои държави от ЕС). Не събирам съзнателно информация от деца, а самата игра не събира лични данни. Ако си родител или настойник и смяташ, че детето ти е ползвало играта по начин, който те тревожи, свържи се с мен и ще помогна.</p>
 
 <h2>8. Съхранение и изтриване на данни</h2>
-<p>Данните на играта остават в телефона ти, докато не премахнеш играта, не изчистиш данните ѝ. Данните, които Google събира за реклами, се пазят и могат да се управляват, както е описано в политиките на Google и в Google акаунта и настройките на Android.</p>
+<p>Данните на играта остават в телефона ти, докато не премахнеш играта или не изчистиш данните ѝ. Данните, които Google събира за реклами, се пазят и могат да се управляват, както е описано в политиките на Google и в Google акаунта и настройките на Android.</p>
 
 <h2>9. Твоите права</h2>
 <p>В зависимост от това къде живееш (например в ЕС/ЕИП, Обединеното кралство или някои щати на САЩ) може да имаш права върху личните данни, като достъп, поправяне, изтриване, възражение и оттегляне на съгласие. Тъй като не пазя лични данни за теб, нямам какво да ти предоставя или изтрия; за данните, които Google събира чрез рекламите, ползвай изборите по-горе, настройките на Google акаунта си или се обърни към Google. Съгласието за реклами можеш да оттеглиш по всяко време, както е описано в раздел 3. Можеш да подадеш жалба и до местния орган по защита на данните. Пиши ми, ако имаш въпроси.</p>
